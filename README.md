@@ -5,7 +5,7 @@ Readme under construction bro!
 
 On the root **build.gradle** file:
 
-```groovy
+```
 repositories {
   ...
 
@@ -17,7 +17,7 @@ repositories {
 
 On the application **build.gradle** file:
 
-```groovy
+```
 dependencies {
   ...
 
