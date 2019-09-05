@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="camera_margin_padding">8dp</dimen>
+    <dimen name="camera_text_super_micro">10sp</dimen>
+    <dimen name="camera_coordinates_text_size">14sp</dimen>
+    <dimen name="camera_no_permission_text_size">16sp</dimen>
+    <dimen name="camera_action_view_text_size">10sp</dimen>
+    <dimen name="camera_action_view_drawable_padding">4dp</dimen>
+    <dimen name="camera_action_view_padding">6dp</dimen>
+    <dimen name="camera_action_view_margin_padding">48dp</dimen>
+    <dimen name="camera_capture_button_size">50dp</dimen>
+    <dimen name="camera_action_view_elevation">2dp</dimen>
+    <dimen name="camera_gallery_column_width">150dp</dimen>
+    <dimen name="camera_gallery_image_size">180dp</dimen>
+    <dimen name="camera_gallery_text_container_height">36dp</dimen>
+</resources>

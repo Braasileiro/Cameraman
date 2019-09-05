@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <io.fotoapparat.view.CameraView
+        android:id="@+id/cameraView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <io.fotoapparat.view.FocusView
+            android:id="@+id/focusView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </io.fotoapparat.view.CameraView>
+
+    <com.github.rongi.rotate_layout.layout.RotateLayout
+        android:id="@+id/loadingCoordinatesView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:angle="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/camera_coordinates_background"
+            android:orientation="vertical"
+            android:padding="@dimen/camera_margin_padding"
+            android:text="@string/camera_loading_coordinates"
+            android:textColor="@color/camera_red"
+            android:textSize="@dimen/camera_coordinates_text_size"
+            android:textStyle="bold" />
+    </com.github.rongi.rotate_layout.layout.RotateLayout>
+
+    <com.github.rongi.rotate_layout.layout.RotateLayout
+        android:id="@+id/coordinatesView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:angle="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/camera_coordinates_background"
+            android:padding="@dimen/camera_margin_padding">
+
+            <TableRow android:id="@+id/rowUtm">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/camera_utm"
+                    android:textColor="@color/camera_red"
+                    android:textSize="@dimen/camera_coordinates_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtUtm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/camera_red"
+                    android:textSize="@dimen/camera_coordinates_text_size"
+                    android:textStyle="bold"
+                    tools:text="23K" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/titleUtmX"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/camera_utm_x"
+                    android:textColor="@color/camera_red"
+                    android:textSize="@dimen/camera_coordinates_text_size"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/txtUtmX"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/camera_red"
+                    android:textSize="@dimen/camera_coordinates_text_size"
+                    android:textStyle="bold"
+                    tools:text="23K" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/titleUtmY"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/camera_utm_y"
+                    android:textColor="@color/camera_red"
+                    android:textSize="@dimen/camera_coordinates_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtUtmY"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/camera_red"
+                    android:textSize="@dimen/camera_coordinates_text_size"
+                    android:textStyle="bold"
+                    tools:text="23K" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/camera_date"
+                    android:textColor="@color/camera_red"
+                    android:textSize="@dimen/camera_coordinates_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/camera_red"
+                    android:textSize="@dimen/camera_coordinates_text_size"
+                    android:textStyle="bold"
+                    tools:text="14/06/2019 00:00:00" />
+            </TableRow>
+        </TableLayout>
+    </com.github.rongi.rotate_layout.layout.RotateLayout>
+
+    <LinearLayout
+        android:id="@+id/actionView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/camera_action_bar_background"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/camera_margin_padding"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/flashSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/camera_action_view_margin_padding"
+            android:clickable="false"
+            android:contentDescription="@string/camera_flash"
+            android:padding="@dimen/camera_action_view_padding"
+            android:src="@drawable/ic_flash_off_white" />
+
+        <ImageView
+            android:id="@+id/capturePicture"
+            android:layout_width="@dimen/camera_capture_button_size"
+            android:layout_height="@dimen/camera_capture_button_size"
+            android:contentDescription="@string/camera_capture"
+            android:src="@drawable/capture" />
+
+        <ImageView
+            android:id="@+id/switchCamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/camera_action_view_margin_padding"
+            android:contentDescription="@string/camera_switch"
+            android:padding="@dimen/camera_action_view_padding"
+            android:src="@drawable/ic_camera_front_white" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

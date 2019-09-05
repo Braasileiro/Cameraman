@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/edtDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/camera_margin_padding"
+        android:layout_marginTop="@dimen/camera_margin_padding"
+        android:layout_marginEnd="@dimen/camera_margin_padding"
+        android:hint="@string/camera_description"
+        android:inputType="textCapSentences" />
+</LinearLayout>

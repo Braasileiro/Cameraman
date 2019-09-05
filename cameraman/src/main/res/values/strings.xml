@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Cameraman</string>
+    <string name="camera_no_permission">Camera permissions not granted!</string>
+    <string name="camera_flash">Enable or disable flash.</string>
+    <string name="camera_switch">Change camera.</string>
+    <string name="camera_capture">Capture picture.</string>
+    <string name="camera_preview">Picture preview.</string>
+    <string name="camera_repeat">Repeat</string>
+    <string name="camera_description">Description</string>
+    <string name="camera_edit_description">Edit Description</string>
+    <string name="camera_confirm">Confirm</string>
+    <string name="camera_cancel">Cancel</string>
+    <string name="camera_no_switch_available">The device not have other cameras!</string>
+    <string name="camera_no_flash_available">The device not have flash modes!</string>
+    <string name="camera_latitude" translatable="false">"Latitude: "</string>
+    <string name="camera_longitude" translatable="false">"Longitude: "</string>
+    <string name="camera_utm">"Spindle: "</string>
+    <string name="camera_utm_x">"West: "</string>
+    <string name="camera_utm_y">"North: "</string>
+    <string name="camera_date">"Date: "</string>
+    <string name="camera_loading_coordinates">Searching coordinates…</string>
+    <string name="camera_wait_coordinates">Please wait for the coordinates to be found. You must have GPS enabled for this.</string>
+    <string name="camera_gallery_title">Gallery</string>
+    <string name="camera_gallery_no_pictures">Man, there\'s no pictures to be viewed here!</string>
+    <string name="camera_gallery_imageview_content">Image taken by user.</string>
+    <string name="camera_gallery_picture_not_found">The picture has not be found in device storage.</string>
+</resources>

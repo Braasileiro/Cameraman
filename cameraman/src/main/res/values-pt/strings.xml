@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="camera_no_permission">Permissões de câmera não foram concedidas!</string>
+    <string name="camera_flash">Ativar ou desativar o flash.</string>
+    <string name="camera_switch">Trocar câmera.</string>
+    <string name="camera_capture">Capturar foto.</string>
+    <string name="camera_preview">Preview da foto.</string>
+    <string name="camera_repeat">Repetir</string>
+    <string name="camera_description">Descrição</string>
+    <string name="camera_edit_description">Editar Descrição</string>
+    <string name="camera_confirm">Confirmar</string>
+    <string name="camera_cancel">Cancelar</string>
+    <string name="camera_no_switch_available">O dispositivo não possui outras câmeras!</string>
+    <string name="camera_no_flash_available">O dispositivo não possui modos de flash!</string>
+    <string name="camera_utm">"Fuso: "</string>
+    <string name="camera_utm_x">"Este: "</string>
+    <string name="camera_utm_y">"Norte: "</string>
+    <string name="camera_date">"Data: "</string>
+    <string name="camera_loading_coordinates">Buscando coordenadas…</string>
+    <string name="camera_wait_coordinates">Por favor, espere as coordenadas serem localizadas. Você deve estar com o GPS ativo para isso.</string>
+    <string name="camera_gallery_title">Galeria</string>
+    <string name="camera_gallery_no_pictures">Não há fotos para serem visualizadas.</string>
+    <string name="camera_gallery_imageview_content">Imagem capturada pelo usuário.</string>
+    <string name="camera_gallery_picture_not_found">A foto não se encontra mais no local de armazenamento do dispositivo.</string>
+</resources>

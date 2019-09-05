@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="camera_background">#282828</color>
+    <color name="camera_coordinates_background">#99fdfdfd</color>
+    <color name="camera_default_text_color">#ffffffff</color>
+    <color name="camera_red">#ff0000</color>
+    <color name="camera_green">#00ff00</color>
+    <color name="camera_black">#ff000000</color>
+    <color name="camera_white">#ffffffff</color>
+    <color name="camera_action_bar_background">#ff000000</color>
+    <color name="camera_action_bar_semi_transparent_background">#75000000</color>
+    <color name="camera_gallery_text_color">#ff777877</color>
+    <color name="camera_gallery_semi_transparent_background">#75000000</color>
+</resources>
