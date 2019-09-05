@@ -5,6 +5,6 @@ Readme under construction bro!
 
 ```groovy
 maven {
-	url "https://dl.bintray.com/brasileiro/Cameraman/"
+  url "https://dl.bintray.com/brasileiro/Cameraman/"
 }
 ```
