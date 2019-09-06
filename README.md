@@ -6,11 +6,15 @@ Readme under construction bro!
 On the root **build.gradle** file:
 
 ```
-repositories {
-  ...
+buildscript {
+  repositories {
+    jcenter()
+  }
+}
 
-  maven {
-    url "https://dl.bintray.com/brasileiro/Cameraman/"
+allprojects {
+    repositories {
+      jcenter()
   }
 }
 ```
@@ -19,8 +23,6 @@ On the application **build.gradle** file:
 
 ```
 dependencies {
-  ...
-
   implementation 'com.brasileiro:cameraman:0.0.1'
 }
 ```
