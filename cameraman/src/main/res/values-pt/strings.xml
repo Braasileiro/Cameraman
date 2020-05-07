@@ -23,4 +23,6 @@
     <string name="camera_gallery_no_pictures">Não há fotos para serem visualizadas.</string>
     <string name="camera_gallery_imageview_content">Imagem capturada pelo usuário.</string>
     <string name="camera_gallery_picture_not_found">A foto não se encontra mais no local de armazenamento do dispositivo.</string>
+    <string name="camera_orientation_warning_portrait">Por favor tire a foto em MODO RETRATO.</string>
+    <string name="camera_orientation_warning_landscape">Por favor tire a foto em MODO PAISAGEM.</string>
 </resources>

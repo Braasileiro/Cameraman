@@ -3,6 +3,7 @@ package com.brasileiro.cameraman.model
 import java.io.Serializable
 
 import com.brasileiro.cameraman.selector.CoordinateType
+import com.brasileiro.cameraman.selector.OrientationWarning
 import com.brasileiro.cameraman.selector.ResolutionQuality
 
 /**
@@ -22,5 +23,6 @@ data class CameramanSettings(
     var coordinateType: CoordinateType = CoordinateType.UTM,
     var enableDescription: Boolean = false,
     var datePattern: String,
-    var descriptionPrefix: String = ""
+    var descriptionPrefix: String = "",
+    var orientationWarning: OrientationWarning = OrientationWarning.NONE
 ) : Serializable

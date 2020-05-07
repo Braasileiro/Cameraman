@@ -26,4 +26,6 @@
     <string name="camera_gallery_no_pictures">Man, there\'s no pictures to be viewed here!</string>
     <string name="camera_gallery_imageview_content">Image taken by user.</string>
     <string name="camera_gallery_picture_not_found">The picture has not be found in device storage.</string>
+    <string name="camera_orientation_warning_portrait">Please take the picture in PORTRAIT MODE.</string>
+    <string name="camera_orientation_warning_landscape">Please take the picture in LANDSCAPE MODE.</string>
 </resources>
