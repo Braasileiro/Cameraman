@@ -25,7 +25,11 @@ internal class AutofitGridRecyclerView : RecyclerView {
         init(context, attrs)
     }
 
-    constructor(context: Context, attrs: AttributeSet?, defStyle: Int) : super(context, attrs, defStyle) {
+    constructor(context: Context, attrs: AttributeSet?, defStyle: Int) : super(
+        context,
+        attrs,
+        defStyle
+    ) {
         init(context, attrs)
     }
 

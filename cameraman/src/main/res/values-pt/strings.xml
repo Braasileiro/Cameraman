@@ -18,6 +18,7 @@
     <string name="camera_date">"Data: "</string>
     <string name="camera_loading_coordinates">Buscando coordenadas…</string>
     <string name="camera_wait_coordinates">Por favor, espere as coordenadas serem localizadas. Você deve estar com o GPS ativo para isso.</string>
+    <string name="camera_location_request_time_limit">Parece que a busca de coordenadas está demorando. Por favor, tente reiniciar a câmera ou vá para um local melhor.</string>
     <string name="camera_gallery_title">Galeria</string>
     <string name="camera_gallery_no_pictures">Não há fotos para serem visualizadas.</string>
     <string name="camera_gallery_imageview_content">Imagem capturada pelo usuário.</string>

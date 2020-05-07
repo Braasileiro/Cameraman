@@ -12,4 +12,6 @@ import com.brasileiro.cameraman.geo.model.GeolocationOutput
 internal interface GeolocationListener : Serializable {
 
     fun onLocationChanged(output: GeolocationOutput)
+
+    fun onLocationRequestTimeLimitReached()
 }

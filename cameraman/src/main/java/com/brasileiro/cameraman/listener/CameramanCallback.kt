@@ -12,4 +12,6 @@ import com.brasileiro.cameraman.model.CameramanOutput
 interface CameramanCallback : Serializable {
 
     fun onPreviewConfirmed(output: CameramanOutput)
+
+    fun onPreviewBackPressed() {}
 }

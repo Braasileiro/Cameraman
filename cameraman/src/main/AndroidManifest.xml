@@ -12,9 +12,9 @@
 
     <application>
         <activity
-            android:name="com.brasileiro.cameraman.view.CameraActivity"
+            android:name=".view.CameraActivity"
             android:screenOrientation="portrait" />
 
-        <activity android:name="com.brasileiro.cameraman.gallery.ImageViewerActivity" />
+        <activity android:name=".gallery.view.imageviewer.ImageViewerActivity" />
     </application>
 </manifest>

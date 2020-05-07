@@ -8,7 +8,11 @@ import com.brasileiro.cameraman.listener.DateListener
  * @since 25/06/2019 11:42
  */
 
-internal fun dateAutoUpdater(pattern: String, interval: Long = 1000, listener: DateListener): RunnableHandler {
+internal fun dateAutoUpdater(
+    pattern: String,
+    interval: Long = 1000,
+    listener: DateListener
+): RunnableHandler {
 
     return RunnableHandler({ listener.onDateChanged(dateFormatNow(pattern)) }, interval)
 }

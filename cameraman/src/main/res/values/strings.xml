@@ -21,6 +21,7 @@
     <string name="camera_date">"Date: "</string>
     <string name="camera_loading_coordinates">Searching coordinates…</string>
     <string name="camera_wait_coordinates">Please wait for the coordinates to be found. You must have GPS enabled for this.</string>
+    <string name="camera_location_request_time_limit">Looks like the coordinates request is slow. Please, try to reopen the camera or get a better spot.</string>
     <string name="camera_gallery_title">Gallery</string>
     <string name="camera_gallery_no_pictures">Man, there\'s no pictures to be viewed here!</string>
     <string name="camera_gallery_imageview_content">Image taken by user.</string>

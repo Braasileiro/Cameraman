@@ -8,6 +8,7 @@ import android.location.LocationManager
 import android.location.LocationListener
 
 import com.brasileiro.cameraman.BuildConfig
+import com.brasileiro.cameraman.util.RunnableHandler
 import com.brasileiro.cameraman.geo.converter.LatLon2UTM
 import com.brasileiro.cameraman.geo.model.GeolocationOutput
 import com.brasileiro.cameraman.geo.listener.GeolocationListener
@@ -18,7 +19,8 @@ import com.brasileiro.cameraman.geo.listener.GeolocationListener
  */
 
 @SuppressLint("MissingPermission")
-internal class Geolocation(context: Context, private var listener: GeolocationListener) : LocationListener {
+internal class Geolocation(context: Context, private var listener: GeolocationListener) :
+    LocationListener {
 
     companion object {
         private const val TIME_INTERVAL: Long = 30000 // Miliseconds
@@ -29,7 +31,19 @@ internal class Geolocation(context: Context, private var listener: GeolocationLi
         context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
     }
 
-    fun requestLocationUpdates(autoCoordinatesInDebugMode: Boolean) {
+    private val latLon2UTM: LatLon2UTM by lazy {
+        LatLon2UTM()
+    }
+
+    private var limitReached: Boolean = true
+    private lateinit var limitHandler: RunnableHandler
+
+
+    fun requestLocationUpdates(
+        autoCoordinatesInDebugMode: Boolean,
+        enableCoordinatesTimeLimitWarning: Boolean,
+        coordinatesTimeLimit: Long
+    ) {
         if (BuildConfig.DEBUG && autoCoordinatesInDebugMode) {
             listener.onLocationChanged(
                 GeolocationOutput(
@@ -41,7 +55,23 @@ internal class Geolocation(context: Context, private var listener: GeolocationLi
                 )
             )
         } else {
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, TIME_INTERVAL, DISTANCE_RADIUS, this)
+            locationManager.requestLocationUpdates(
+                LocationManager.GPS_PROVIDER,
+                TIME_INTERVAL,
+                DISTANCE_RADIUS,
+                this
+            )
+
+            if (enableCoordinatesTimeLimitWarning) {
+                limitHandler = RunnableHandler({
+                    when (limitReached) {
+                        true -> listener.onLocationRequestTimeLimitReached()
+                        false -> limitHandler.stop()
+                    }
+                }, coordinatesTimeLimit)
+
+                limitHandler.scheduledAtFixedRate()
+            }
         }
     }
 
@@ -51,13 +81,15 @@ internal class Geolocation(context: Context, private var listener: GeolocationLi
 
     override fun onLocationChanged(location: Location?) {
         if (location != null) {
+            limitReached = false
+
             listener.onLocationChanged(
                 GeolocationOutput(
                     location.latitude,
                     location.longitude,
-                    LatLon2UTM.convertLatLonToUTM(location.latitude, location.longitude),
-                    LatLon2UTM.convertLatToUTM(location.latitude, location.longitude),
-                    LatLon2UTM.convertLonToUTM(location.latitude, location.longitude)
+                    latLon2UTM.convertLatLonToUTM(location.latitude, location.longitude),
+                    latLon2UTM.convertLatToUTM(location.latitude, location.longitude),
+                    latLon2UTM.convertLonToUTM(location.latitude, location.longitude)
                 )
             )
         }

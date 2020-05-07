@@ -10,7 +10,20 @@
     <dimen name="camera_action_view_margin_padding">48dp</dimen>
     <dimen name="camera_capture_button_size">50dp</dimen>
     <dimen name="camera_action_view_elevation">2dp</dimen>
-    <dimen name="camera_gallery_column_width">150dp</dimen>
+
+    <dimen name="camera_gallery_column_width">180dp</dimen>
     <dimen name="camera_gallery_image_size">180dp</dimen>
     <dimen name="camera_gallery_text_container_height">36dp</dimen>
+
+    <dimen name="camera_gallery_album_cardview_radius">4dp</dimen>
+    <dimen name="camera_gallery_album_cardview_elevation">4dp</dimen>
+    <dimen name="camera_gallery_album_image_size">88dp</dimen>
+    <dimen name="camera_gallery_album_image_margin">2dp</dimen>
+    <dimen name="camera_gallery_album_image_border_margin">1dp</dimen>
+    <dimen name="camera_gallery_album_text_container_width">180dp</dimen>
+    <dimen name="camera_gallery_album_text_container_height">36dp</dimen>
+    <dimen name="camera_gallery_album_text_container_padding">2dp</dimen>
+
+    <dimen name="camera_gallery_album_toolbar_container_height">36dp</dimen>
+    <dimen name="camera_gallery_album_toolbar_container_padding">8dp</dimen>
 </resources>

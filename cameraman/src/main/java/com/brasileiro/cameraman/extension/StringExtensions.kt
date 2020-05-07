@@ -21,7 +21,10 @@ internal fun String.mkdirs(): Boolean {
 internal fun String.saveFileWithTimestamp(suffix: String): File {
     return File(
         this,
-        String.format("%s$suffix", SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.getDefault()).format(Date()))
+        String.format(
+            "%s$suffix",
+            SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.getDefault()).format(Date())
+        )
     )
 }
 

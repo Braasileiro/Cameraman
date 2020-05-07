@@ -26,7 +26,11 @@ internal class Coordinator {
         private const val DEFAULT_TEXT_SIZE = 50f
 
         fun plotCoordinatesIntoBitmap(
-            context: Context, bitmap: Bitmap, locationOutput: GeolocationOutput, date: String, type: CoordinateType
+            context: Context,
+            bitmap: Bitmap,
+            locationOutput: GeolocationOutput,
+            date: String,
+            type: CoordinateType
         ): Bitmap {
 
             // Resources

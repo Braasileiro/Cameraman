@@ -12,7 +12,7 @@ import com.bumptech.glide.Glide
 import com.brasileiro.cameraman.R
 import com.brasileiro.cameraman.extension.visible
 import com.brasileiro.cameraman.extension.fileExists
-import com.brasileiro.cameraman.model.CameramanPicture
+import com.brasileiro.cameraman.gallery.model.CameramanPicture
 
 import kotlinx.android.synthetic.main.item_image_viewer.view.*
 
@@ -29,7 +29,8 @@ internal class ImageViewerAdapter(
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_image_viewer, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_image_viewer, parent, false)
 
         return MyViewHolder(view)
     }

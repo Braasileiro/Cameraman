@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    app:cardBackgroundColor="@color/camera_white"
+    app:cardCornerRadius="@dimen/camera_gallery_album_cardview_radius"
+    app:cardElevation="@dimen/camera_gallery_album_cardview_elevation">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/camera_gallery_album_image_border_margin">
+
+        <ImageView
+            android:id="@+id/picture1"
+            android:layout_width="@dimen/camera_gallery_album_image_size"
+            android:layout_height="@dimen/camera_gallery_album_image_size"
+            android:layout_marginStart="@dimen/camera_gallery_album_image_border_margin"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/camera_gallery_imageview_content"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@android:drawable/ic_menu_report_image" />
+
+        <ImageView
+            android:id="@+id/picture2"
+            android:layout_width="@dimen/camera_gallery_album_image_size"
+            android:layout_height="@dimen/camera_gallery_album_image_size"
+            android:layout_marginStart="@dimen/camera_gallery_album_image_margin"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/camera_gallery_imageview_content"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toEndOf="@id/picture1"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@android:drawable/ic_menu_report_image" />
+
+        <ImageView
+            android:id="@+id/picture3"
+            android:layout_width="@dimen/camera_gallery_album_image_size"
+            android:layout_height="@dimen/camera_gallery_album_image_size"
+            android:layout_marginStart="@dimen/camera_gallery_album_image_border_margin"
+            android:layout_marginTop="@dimen/camera_gallery_album_image_margin"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/camera_gallery_imageview_content"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/picture1"
+            tools:src="@android:drawable/ic_menu_report_image" />
+
+        <ImageView
+            android:id="@+id/picture4"
+            android:layout_width="@dimen/camera_gallery_album_image_size"
+            android:layout_height="@dimen/camera_gallery_album_image_size"
+            android:layout_marginStart="@dimen/camera_gallery_album_image_margin"
+            android:layout_marginTop="@dimen/camera_gallery_album_image_margin"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/camera_gallery_imageview_content"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toEndOf="@id/picture3"
+            app:layout_constraintTop_toBottomOf="@id/picture2"
+            tools:src="@android:drawable/ic_menu_report_image" />
+
+        <TextView
+            android:id="@+id/txtDescription"
+            android:layout_width="@dimen/camera_gallery_album_text_container_width"
+            android:layout_height="@dimen/camera_gallery_album_text_container_height"
+            android:fontFamily="@font/robotolight"
+            android:gravity="center"
+            android:maxLines="2"
+            android:paddingStart="@dimen/camera_gallery_album_text_container_padding"
+            android:paddingEnd="@dimen/camera_gallery_album_text_container_padding"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/camera_black"
+            android:textSize="@dimen/camera_text_super_micro"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/picture3"
+            tools:text="FINAL FANTASY VII" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -30,5 +30,5 @@
         android:layout_height="match_parent"
         android:clipToPadding="false"
         android:columnWidth="@dimen/camera_gallery_column_width"
-        tools:listitem="@layout/item_gallery" />
+        tools:listitem="@layout/item_picture" />
 </androidx.constraintlayout.widget.ConstraintLayout>

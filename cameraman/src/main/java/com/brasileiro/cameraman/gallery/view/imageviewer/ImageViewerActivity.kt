@@ -1,4 +1,4 @@
-package com.brasileiro.cameraman.gallery
+package com.brasileiro.cameraman.gallery.view.imageviewer
 
 import android.os.Bundle
 
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.PagerSnapHelper
 import com.brasileiro.cameraman.R
 import com.brasileiro.cameraman.Cameraman
 import com.brasileiro.cameraman.extension.horizontal
-import com.brasileiro.cameraman.model.CameramanPicture
+import com.brasileiro.cameraman.gallery.model.CameramanPicture
 import com.brasileiro.cameraman.gallery.adapter.ImageViewerAdapter
 
 import kotlinx.android.synthetic.main.activity_image_viewer.*

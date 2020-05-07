@@ -29,6 +29,11 @@ class Cameraman(private var context: Context, private var settings: CameramanSet
     fun start(callback: CameramanCallback) {
         Cameraman.callback = callback
 
-        context.startActivity(Intent(context, CameraActivity::class.java).putExtra(CAMERA_SETTINGS, settings))
+        context.startActivity(
+            Intent(context, CameraActivity::class.java).putExtra(
+                CAMERA_SETTINGS,
+                settings
+            )
+        )
     }
 }

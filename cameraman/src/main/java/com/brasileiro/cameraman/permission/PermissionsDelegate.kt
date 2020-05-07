@@ -9,14 +9,21 @@ import android.content.pm.PackageManager
  * @since 12/06/2019 12:23
  */
 
-internal class PermissionsDelegate(private var activity: Activity, private val REQUEST_PERMISSIONS: List<String>) {
+internal class PermissionsDelegate(
+    private var activity: Activity,
+    private val REQUEST_PERMISSIONS: List<String>
+) {
 
     companion object {
         private const val REQUEST_CODE = 10
     }
 
     fun requestPermissions() {
-        ActivityCompat.requestPermissions(activity, REQUEST_PERMISSIONS.toTypedArray(), REQUEST_CODE)
+        ActivityCompat.requestPermissions(
+            activity,
+            REQUEST_PERMISSIONS.toTypedArray(),
+            REQUEST_CODE
+        )
     }
 
     fun hasPermissions(): Boolean {
@@ -29,7 +36,11 @@ internal class PermissionsDelegate(private var activity: Activity, private val R
         return !permissions.map { it == PackageManager.PERMISSION_GRANTED }.contains(false)
     }
 
-    fun resultGranted(requestCode: Int, permissions: Array<out String>, grantResults: IntArray): Boolean {
+    fun resultGranted(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ): Boolean {
         return when {
             requestCode != REQUEST_CODE -> false
 

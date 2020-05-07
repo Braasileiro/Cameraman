@@ -49,7 +49,7 @@ internal class RunnableHandler(private var method: () -> Unit, var interval: Lon
     fun stop() {
         killMinus9 = true
 
-        handler.removeCallbacks(null)
+        handler.removeCallbacksAndMessages(null)
     }
 
     fun runOnce() {
@@ -68,5 +68,9 @@ internal class RunnableHandler(private var method: () -> Unit, var interval: Lon
         killMinus9 = false
 
         handler.postDelayed(fixedRateRunnable, interval)
+    }
+
+    fun isRunning(): Boolean {
+        return killMinus9
     }
 }

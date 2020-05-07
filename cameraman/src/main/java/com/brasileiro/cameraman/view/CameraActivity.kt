@@ -42,14 +42,13 @@ import kotlinx.android.synthetic.main.content_camera.*
 import kotlinx.android.synthetic.main.activity_camera.*
 import kotlinx.android.synthetic.main.content_camera_preview.*
 
-
 /**
  * @author Lucas Cota
  * @since 11/06/2019 16:36
  */
 
-internal class CameraActivity : AppCompatActivity(), OrientationListener.RotationListener, GeolocationListener,
-    DateListener {
+internal class CameraActivity : AppCompatActivity(), OrientationListener.RotationListener,
+    GeolocationListener, DateListener {
 
     companion object {
         private val PERMISSIONS = arrayListOf(
@@ -136,7 +135,12 @@ internal class CameraActivity : AppCompatActivity(), OrientationListener.Rotatio
     }
 
     override fun onBackPressed() {
-        if (contentCameraPreview.isVisible) switchToCamera() else super.onBackPressed()
+        if (contentCameraPreview.isVisible) {
+            switchToCamera()
+        } else {
+            super.onBackPressed()
+            callback.onPreviewBackPressed()
+        }
     }
 
 
@@ -144,8 +148,10 @@ internal class CameraActivity : AppCompatActivity(), OrientationListener.Rotatio
     private fun configureOrientation() {
         val portraitAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate_to_portrait)
         val landscapeAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate_to_landscape)
-        val reversePortraitAnim = AnimationUtils.loadAnimation(this, R.anim.rotate_to_reverse_portrait)
-        val reverseLandscapeAnim = AnimationUtils.loadAnimation(this, R.anim.rotate_to_reverse_landscape)
+        val reversePortraitAnim =
+            AnimationUtils.loadAnimation(this, R.anim.rotate_to_reverse_portrait)
+        val reverseLandscapeAnim =
+            AnimationUtils.loadAnimation(this, R.anim.rotate_to_reverse_landscape)
 
         orientationListener = OrientationListener(
             this,
@@ -233,13 +239,20 @@ internal class CameraActivity : AppCompatActivity(), OrientationListener.Rotatio
         }
     }
 
+    override fun onLocationRequestTimeLimitReached() {
+        runOnUiThread { toast(getString(R.string.camera_location_request_time_limit)) }
+    }
 
     // Camera
     private fun startFotoapparat() {
         fotoapparat.start()
         dateHandler.scheduledAtFixedRate()
 
-        if (settings.enableCoordinates) geolocation?.requestLocationUpdates(settings.enableAutoCoordinatesInDebugMode)
+        if (settings.enableCoordinates) geolocation?.requestLocationUpdates(
+            settings.enableAutoCoordinatesInDebugMode,
+            settings.enableCoordinatesTimeLimitWarning,
+            settings.coordinatesTimeLimitWarning
+        )
     }
 
     private fun stopFotoapparat() {
@@ -357,16 +370,11 @@ internal class CameraActivity : AppCompatActivity(), OrientationListener.Rotatio
                 override fun whenDone(it: BitmapPhoto?) {
 
                     if (it == null) {
-                        Exception("Couldn't capture photo.")
-                        return
+                        throw Exception("Couldn't capture photo.")
                     }
 
                     val newBitmap = it.optimizeBitmap(this@CameraActivity)
-
-                    if (newBitmap == null) {
-                        Exception("Couldn't optimize bitmap.")
-                        return
-                    }
+                        ?: throw Exception("Couldn't optimize bitmap.")
 
                     bitmap = when {
                         settings.enableCoordinates -> Coordinator.plotCoordinatesIntoBitmap(
@@ -407,7 +415,8 @@ internal class CameraActivity : AppCompatActivity(), OrientationListener.Rotatio
             )
 
             alertDialog.setPositiveButton(getString(R.string.camera_confirm)) { dialog, _ ->
-                descriptionOutput = (dialog as AlertDialog).findViewById<EditText>(R.id.edtDescription)?.toText()!!
+                descriptionOutput =
+                    (dialog as AlertDialog).findViewById<EditText>(R.id.edtDescription)?.toText()!!
             }
 
             val dialog = alertDialog.create()
@@ -518,7 +527,11 @@ internal class CameraActivity : AppCompatActivity(), OrientationListener.Rotatio
         }
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
         when {

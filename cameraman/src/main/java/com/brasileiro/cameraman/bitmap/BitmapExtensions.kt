@@ -53,7 +53,11 @@ internal fun BitmapPhoto.optimizeBitmap(context: Context): Bitmap? {
         val randomAccessFile = RandomAccessFile(tempFile, "rw")
         val fileChannel = randomAccessFile.channel
         val mappedByteBuffer =
-            fileChannel.map(FileChannel.MapMode.READ_WRITE, 0, (sourceBitmap.rowBytes * height).toLong())
+            fileChannel.map(
+                FileChannel.MapMode.READ_WRITE,
+                0,
+                (sourceBitmap.rowBytes * height).toLong()
+            )
 
 
         // Store source bitmap buffer and recycle (flush memory)
