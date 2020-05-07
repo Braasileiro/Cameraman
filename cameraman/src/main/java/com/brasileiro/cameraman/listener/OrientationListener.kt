@@ -27,7 +27,7 @@ internal class OrientationListener(
         const val ROTATION_270 = 4
     }
 
-    var rotation: Int = 0
+    var rotation: Int = 1
 
     override fun onOrientationChanged(orientation: Int) {
         when {

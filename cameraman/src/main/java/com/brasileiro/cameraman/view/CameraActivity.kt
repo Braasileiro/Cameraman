@@ -366,14 +366,14 @@ internal class CameraActivity : AppCompatActivity(), OrientationListener.Rotatio
 
             if (settings.orientationWarning == OrientationWarning.PORTRAIT) {
                 if (orientationListener.rotation != OrientationListener.ROTATION_O
-                    || orientationListener.rotation != OrientationListener.ROTATION_180
+                    && orientationListener.rotation != OrientationListener.ROTATION_180
                 ) {
                     toast(getString(R.string.camera_orientation_warning_portrait))
                     return@setOnClickListener
                 }
             } else if (settings.orientationWarning == OrientationWarning.LANDSCAPE) {
                 if (orientationListener.rotation != OrientationListener.ROTATION_90
-                    || orientationListener.rotation != OrientationListener.ROTATION_270
+                    && orientationListener.rotation != OrientationListener.ROTATION_270
                 ) {
                     toast(getString(R.string.camera_orientation_warning_landscape))
                     return@setOnClickListener
